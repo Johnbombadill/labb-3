@@ -1,3 +1,4 @@
+%load_ext tensorboard
 #!/usr/bin/env python
 # coding: utf-8
 import os
@@ -11,6 +12,7 @@ import numpy as np
 import datetime
 
 
+
 # Flagga för att ta bort all tidigare sparad logdata
 clean_logs = False
 
@@ -20,7 +22,6 @@ os.makedirs("logs/", exist_ok=True)
 # Rensa loggdata
 if clean_logs:
     !rm -rf logs/
-
 
 # Funktion för att generara en "Confusion matrix" som kan skrivas som en tensorflow bild.
 def image_cmatrix(model, xtest, ytest):
